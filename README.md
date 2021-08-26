@@ -1,60 +1,81 @@
 [![cover](images/cover.png)](SUMMARY.md)
 
-## About this book
+> Sumber: [Mostly adequate guide to FP (in javascript)](https://github.com/MostlyAdequate/mostly-adequate-guide)
 
-This is a book on the functional paradigm in general. We'll use the world's most popular functional programming language: JavaScript. Some may feel this is a poor choice as it's against the grain of the current culture which, at the moment, feels predominately imperative. However, I believe it is the best way to learn FP for several reasons:
+## Tentang buku ini
 
- * **You likely use it every day at work.**
+Ini adalah buku tentang paradigma fungsional secara umum.
 
-    This makes it possible to practice and apply your acquired knowledge each day on real world programs rather than pet projects on nights and weekends in an esoteric FP language.
+Kami akan menggunakan bahasa pemrograman fungsional terpopuler di dunia: JavaScript.
 
+Beberapa diantaranya mungkin merasa ini adalah pilihan yang buruk karena bertentangan dengan selera budaya saat ini, saat ini, terasa begitu penting.
 
- * **We don't have to learn everything up front to start writing programs.**
+Namun, saya percaya ini adalah cara terbaik untuk belajar FP karena beberapa alasan berikut:
 
-    In a pure functional language, you cannot log a variable or read a DOM node without using monads. Here we can cheat a little as we learn to purify our codebase. It's also easier to get started in this language since it's mixed paradigm and you can fall back on your current practices while there are gaps in your knowledge.
+- **Anda mungkin menggunakannya setiap hari di tempat kerja.**
 
+  Hal ini memungkinkan untuk berlatih dan menerapkan pengetahuan yang Anda peroleh setiap hari pada program dunia nyata daripada proyek hewan peliharaan pada malam hari dan akhir pekan dalam bahasa FP esoteris.
 
- * **The language is fully capable of writing top notch functional code.**
+- **Kita tidak harus mempelajari semuanya terlebih dahulu untuk mulai menulis program.**
 
-    We have all the features we need to mimic a language like Scala or Haskell with the help of a tiny library or two. Object-oriented programming currently dominates the industry, but it's clearly awkward in JavaScript. It's akin to camping off of a highway or tap dancing in galoshes. We have to `bind` all over the place lest `this` change out from under us, we have various work arounds for the quirky behavior when the `new` keyword is forgotten, private members are only available via closures. To a lot of us, FP feels more natural anyways.
+  Dalam bahasa fungsional murni, Anda tidak dapat mencatat variabel atau membaca simpul DOM tanpa menggunakan monads.
 
-That said, typed functional languages will, without a doubt, be the best place to code in the style presented by this book. JavaScript will be our means of learning a paradigm, where you apply it is up to you. Luckily, the interfaces are mathematical and, as such, ubiquitous. You'll find yourself at home with Swiftz, Scalaz, Haskell, PureScript, and other mathematically inclined environments.
+  Di sini kita bisa sedikit curang saat kita belajar memurnikan basis kode kita.
 
+  Juga lebih mudah untuk memulai dalam bahasa ini karena ini adalah paradigma campuran dan Anda dapat kembali ke praktik Anda saat ini sementara ada kesenjangan dalam pengetahuan Anda.
 
-## Read it Online
+- **Bahasa ini sepenuhnya mampu menulis kode fungsional kedudukan tertinggi.**
 
-For a best reading experience, [read it online via Gitbook](https://mostly-adequate.gitbooks.io/mostly-adequate-guide/).
+  Kami memiliki semua fitur yang kami butuhkan untuk meniru bahasa seperti Scala atau Haskell dengan bantuan satu atau dua perpustakaan kecil.
 
-- Quick-access side-bar
-- In-browser exercises
-- In-depth examples
+  Pemrograman berorientasi objek saat ini mendominasi industri, tetapi jelas canggung dalam JavaScript.
 
+  Ini mirip dengan berkemah di jalan raya atau menari tap di sepatu karet.
 
-## Play Around with Code
+  Kami harus melakukan `bind` ke mana-mana agar `this` tidak berubah dari bawah kami, kami memiliki berbagai solusi untuk perilaku unik ketika kata kunci `new` dilupakan, _private members_ (anggota pribadi) hanya tersedia melalui _closures_ (penutupan). Bagi banyak dari kita, FP terasa lebih alami.
 
-To make the training efficient and not get too bored while I am telling you another story, make sure to play around with the concepts introduced in this book. Some can be tricky to catch at first and are better understood by getting your hands dirty.
-All functions and algebraic data-structures presented in the book are gathered in the appendixes. The corresponding code is also available as an npm module:
+Yang mengatakan, bahasa fungsional yang diketik (_typed_) akan, tanpa diragukan lagi, menjadi tempat terbaik untuk membuat kode dalam gaya yang disajikan oleh buku ini.
+
+JavaScript akan menjadi sarana kami untuk mempelajari suatu paradigma, di mana Anda menerapkannya terserah Anda. Untungnya, antarmukanya matematis dan dengan demikian ada di mana-mana.
+
+Anda akan merasa betah dengan Swiftz, Scalaz, Haskell, PureScript, dan lingkungan yang cenderung matematis lainnya.
+
+## Baca Online
+
+Untuk pengalaman membaca terbaik, [bacalah secara online melalui Gitbook](https://renomureza.gitbook.io/belajar-functional-programming-javascript/).
+
+- Bilah samping akses cepat
+- Latihan dalam browser
+- Contoh mendalam
+
+## Bermain-main dengan Kode
+
+Untuk membuat pelatihan menjadi efisien dan tidak terlalu bosan saat saya menceritakan kisah lain, pastikan untuk bermain-main dengan konsep yang diperkenalkan dalam buku ini.
+
+Beberapa mungkin sulit ditangkap pada awalnya dan lebih mudah dipahami dengan mengotori tangan Anda. Semua fungsi dan struktur data aljabar yang disajikan dalam buku ini dikumpulkan dalam lampiran.
+
+Kode yang sesuai juga tersedia sebagai modul npm:
 
 ```bash
 $ npm i @mostly-adequate/support
 ```
 
-Alternatively, exercises of each chapter are runnable and can be completed in your editor! For example, complete the `exercise_*.js` in `exercises/ch04` and then run:
+Atau, latihan setiap bab dapat dijalankan dan diselesaikan di editor Anda! Misalnya, selesaikan `exercise_*.js` di `exercises/ch04` lalu jalankan:
 
 ```bash
 $ npm run ch04
 ```
 
-## Download it
+## Unduh itu
 
-Find pre-generated **PDF** and **EPUB** as [build artifacts of the latest release](https://github.com/MostlyAdequate/mostly-adequate-guide/releases/latest).
+Temukan **PDF** dan **EPUB** yang telah dibuat sebelumnya sebagai [build artifacts of the latest release](https://github.com/renomureza/mostly-adequate-guide/releases).
 
-## Do it yourself
+## Lakukan sendiri
 
-> ⚠️ This project setup is now a bit old and thus, you may run into various issues when building this locally. We recommend to use node v10.22.1 and the latest version of Calibre if possible. 
+> ⚠️ ️Penyiapan proyek ini sekarang agak lama dan karenanya, Anda mungkin mengalami berbagai masalah saat membangun ini secara lokal. Kami menyarankan untuk menggunakan node v10.22.1 dan Calibre versi terbaru jika memungkinkan.
 
 ```
-git clone https://github.com/MostlyAdequate/mostly-adequate-guide.git
+git clone https://github.com/renomureza/mostly-adequate-guide.git
 cd mostly-adequate-guide/
 npm install
 npm run setup
@@ -62,40 +83,36 @@ npm run generate-pdf
 npm run generate-epub
 ```
 
-> Note! To generate the ebook version you will need to install `ebook-convert`. [Installation instructions](https://gitbookio.gitbooks.io/documentation/content/build/ebookconvert.html).
+> Catatan! Untuk menghasilkan versi ebook, Anda harus menginstal `ebook-convert`. [Petunjuk pemasangan](https://gitbookio.gitbooks.io/documentation/content/build/ebookconvert.html).
 
-# Table of Contents
+# Daftar Isi
 
-See [SUMMARY.md](SUMMARY.md)
+Lihat [SUMMARY-id.md](SUMMARY-id.md)
 
-### Contributing
+### Berkontribusi
 
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+Lihat [CONTRIBUTING-id.md](CONTRIBUTING-id.md)
 
-### Translations
+### Terjemahan
 
-See [TRANSLATIONS.md](TRANSLATIONS.md)
+Lihat [TRANSLATIONS.md](TRANSLATIONS.md)
 
 ### FAQ
 
-See [FAQ.md](FAQ.md)
+Lihat [FAQ.md](FAQ.md)
 
+# Rencana untuk masa depan
 
-
-# Plans for the future
-
-* **Part 1** (chapters 1-7) is a guide to the basics. I'm updating as I find errors since this is the initial draft. Feel free to help!
-* **Part 2** (chapters 8-13) address type classes like functors and monads all the way through to traversable. I hope to squeeze in transformers and a pure application.
-* **Part 3** (chapters 14+) will start to dance the fine line between practical programming and academic absurdity. We'll look at comonads, f-algebras, free monads, yoneda, and other categorical constructs.
-
+- **Bagian 1** (Bab 1-7) adalah panduan untuk dasar-dasarnya. Saya memperbarui karena saya menemukan kesalahan karena ini adalah draf awal. Jangan ragu untuk membantu!
+- **Bagian 2** (bab 8-13) membahas kelas tipe seperti functor dan monad hingga traversable. Saya berharap untuk memeras transformer dan aplikasi murni.
+- **Bagian 3** (bab 14+) akan mulai menarik garis tipis antara pemrograman praktis dan absurditas akademis. Kita akan melihat comonads, f-algebras, free monads, yoneda, dan konstruksi kategorikal lainnya.
 
 ---
-
 
 <p align="center">
   <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
     <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
   </a>
   <br />
-  This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+  Karya ini dilisensikan di bawah <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 </p>
