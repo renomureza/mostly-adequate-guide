@@ -78,7 +78,7 @@ Itu benar, komposisi langsung dari buku matematika. Bahkan, mungkin inilah saatn
 compose(f, compose(g, h)) === compose(compose(f, g), h);
 ```
 
-Composition is associative, meaning it doesn't matter how you group two of them. So, should we choose to uppercase the string, we can write:
+Komposisi bersifat asosiatif, artinya tidak masalah bagaimana Anda mengelompokkan keduanya. Jadi, jika kita memilih untuk huruf besar string, kita dapat menulis:
 
 ```js
 compose(toUpperCase, compose(head, reverse));
@@ -98,10 +98,6 @@ const loudLastUpper = compose(exclaim, toUpperCase, head, reverse);
 lastUpper(arg); // 'UPPERCUT'
 loudLastUpper(arg); // 'UPPERCUT!'
 ```
-
-Applying the associative property gives us this flexibility and peace of mind that the result will be equivalent. The slightly more complicated variadic definition is included with the support libraries for this book and is the normal definition you'll find in libraries like
-
-One pleasant benefit of associativity is that any group of functions can be extracted and bundled together in their very own composition. Let's play with refactoring our previous example:
 
 Menerapkan properti asosiatif memberi kita fleksibilitas dan ketenangan pikiran bahwa hasilnya akan setara.
 
@@ -127,8 +123,6 @@ const loudLastUpper = compose(angry, last);
 
 // more variations...
 ```
-
-There's no right or wrong answers - we're just plugging our legos together in whatever way we please. Usually it's best to group things in a reusable way like `last` and `angry`. If familiar with Fowler's "[Refactoring][refactoring-book]", one might recognize this process as "[extract function][extract-function-refactor]"...except without all the object state to worry about.
 
 Tidak ada jawaban benar atau salah - kami hanya menghubungkan lego kami dengan cara apa pun yang kami inginkan.
 
@@ -259,7 +253,11 @@ Komposisi akan menjadi alat kami untuk membangun program dan, seperti yang dihar
 
 ## Teori Kategori
 
-Category theory is an abstract branch of mathematics that can formalize concepts from several different branches such as set theory, type theory, group theory, logic, and more. It primarily deals with objects, morphisms, and transformations, which mirrors programming quite closely. Here is a chart of the same concepts as viewed from each separate theory.
+Teori kategori adalah cabang abstrak matematika yang dapat memformalkan konsep dari beberapa cabang yang berbeda seperti teori himpunan, teori tipe, teori grup, logika, dan lainnya.
+
+Ini terutama berkaitan dengan objek, morfisme, dan transformasi, yang mencerminkan pemrograman cukup dekat.
+
+Berikut adalah bagan konsep yang sama seperti yang dilihat dari masing-masing teori yang terpisah.
 
 ![teori kategori](images/cat_theory.png)
 
@@ -300,8 +298,6 @@ const g = (x) => x.length;
 const f = (x) => x === 4;
 const isFourLetterWord = compose(f, g);
 ```
-
-**A distinguished morphism called identity**
 
 **Morfisme yang disebut identitas**, mari kita perkenalkan fungsi yang berguna yang disebut `id`.
 
