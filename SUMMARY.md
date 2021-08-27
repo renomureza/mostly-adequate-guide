@@ -5,7 +5,7 @@
 - [Bab 03: Kebahagiaan Murni dengan Fungsi Murni (Pure Function)](ch03-id.md)
 - [Bab 04: Currying (Kari)](ch04-id.md)
 - [Bab 05: Coding dengan Composing](ch05-id.md)
-- [Bab 06: Contoh Aplikasi](ch06.md)
+- [Bab 06: Contoh Aplikasi](ch06-id.md)
 - [Bab 07: Hindley-Milner dan Saya](ch07.md)
 - [Bab 08: Tupperware](ch08.md)
 - [Bab 09: Monadic Onions](ch09.md)
