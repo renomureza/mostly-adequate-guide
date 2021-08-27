@@ -7,7 +7,7 @@
 - [Bab 05: Coding dengan Composing](ch05-id.md)
 - [Bab 06: Contoh Aplikasi](ch06-id.md)
 - [Bab 07: Hindley-Milner dan Saya](ch07-id.md)
-- [Bab 08: Tupperware](ch08.md)
+- [Bab 08: Tupperware](ch08-id.md)
 - [Bab 09: Monadic Onions](ch09.md)
 - [Bab 10: Aplikatif Functors](ch10.md)
 - [Bab 11: Berubah Lagi, Secara Alami](ch11.md)
