@@ -1,6 +1,6 @@
 [![cover](images/cover.png)](SUMMARY.md)
 
-> Sumber: [Mostly adequate guide to FP (in javascript)](https://github.com/MostlyAdequate/mostly-adequate-guide)
+> Sumber asli buku ini tersedia dalam bahasa Inggris: [Mostly adequate guide to FP (in javascript)](https://github.com/MostlyAdequate/mostly-adequate-guide)
 
 ## Tentang buku ini
 
@@ -42,7 +42,7 @@ Anda akan merasa betah dengan Swiftz, Scalaz, Haskell, PureScript, dan lingkunga
 
 ## Baca Online
 
-Untuk pengalaman membaca terbaik, [bacalah secara online melalui Gitbook](https://renomureza.gitbook.io/belajar-functional-programming-javascript/).
+Untuk pengalaman membaca yang lebih baik, [baca secara online melalui Gitbook](https://renomureza.gitbook.io/belajar-functional-programming-javascript/).
 
 - Bilah samping akses cepat
 - Latihan dalam browser
@@ -66,11 +66,11 @@ Atau, latihan setiap bab dapat dijalankan dan diselesaikan di editor Anda! Misal
 $ npm run ch04
 ```
 
-## Unduh itu
+## Unduh
 
-Temukan **PDF** dan **EPUB** yang telah dibuat sebelumnya sebagai [build artifacts of the latest release](https://github.com/renomureza/mostly-adequate-guide/releases).
+Temukan **PDF** dan **EPUB** yang telah dibuat sebelumnya sebagai [build artifacts versi terbaru](https://github.com/renomureza/mostly-adequate-guide/releases).
 
-## Lakukan sendiri
+atau, buat sendiri.
 
 > ⚠️ ️Penyiapan proyek ini sekarang agak lama dan karenanya, Anda mungkin mengalami berbagai masalah saat membangun ini secara lokal. Kami menyarankan untuk menggunakan node v10.22.1 dan Calibre versi terbaru jika memungkinkan.
 
@@ -99,7 +99,7 @@ Lihat [TRANSLATIONS.md](TRANSLATIONS.md)
 
 ### FAQ
 
-Lihat [FAQ.md](FAQ.md)
+Lihat [FAQ.md](FAQ-id.md)
 
 # Rencana untuk masa depan
 
