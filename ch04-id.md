@@ -98,7 +98,7 @@ Sama dengan `sort`, `filter`, dan fungsi tingkat tinggi (_higher order function_
 
 Ketika kami berbicara tentang fungsi murni, kami mengatakan bahwa mereka mengambil 1 input ke 1 output.
 
-Currying melakukan hal ini: setiap argumen mengembalikan fungsi baru yang mengharapkan argumen yang tersisa. Itu, olahraga lama, adalah 1 input ke 1 output.
+Currying melakukan hal ini: setiap argumen mengembalikan fungsi baru yang mengharapkan argumen yang tersisa. Itu adalah olahraga lama, 1 input ke 1 output.
 
 Tidak masalah jika outputnya adalah fungsi lain - itu memenuhi syarat sebagai murni.
 
