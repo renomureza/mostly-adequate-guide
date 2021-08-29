@@ -27,7 +27,7 @@ const compose2 = (f, g) => (x) => f(g(x));
 
 `f` dan `g` adalah fungsi dan `x` merupakan nilai yang "menyalurkan" melalui mereka.
 
-Komposisi terasa seperti fungsi peternakan.
+Komposisi terasa seperti peternakan fungsi.
 
 Anda, peternak fungsi, memilih dua dengan sifat yang ingin Anda gabungkan dan tumbuk keduanya untuk menelurkan yang baru. Penggunaannya adalah sebagai berikut:
 
@@ -65,7 +65,7 @@ const last = compose(head, reverse);
 last(["jumpkick", "roundhouse", "uppercut"]); // 'uppercut'
 ```
 
-`reverse` akan membalikkan daftar sambil `head` mengambil item awal.
+`reverse` akan membalikkan array dan `head` mengambil item awal.
 
 Ini menghasilkan fungsi yang efektif, meskipun tidak efisien, fungsi `last`.
 
@@ -132,9 +132,9 @@ Jika akrab dengan Fowler "[Refactoring](https://martinfowler.com/books/refactori
 
 ## Pointfree
 
-Gaya pointfree berarti tidak pernah harus mengatakan data Anda.
+Gaya pointfree berarti tidak harus mengatakan data Anda.
 
-Permisi. Ini berarti fungsi yang tidak pernah menyebutkan data tempat mereka beroperasi.
+Permisi. Ini berarti fungsi yang tidak pernah menyebutkan data di tempat mereka beroperasi.
 
 Fungsi kelas satu, curry, dan komposisi semuanya bermain bersama dengan baik untuk menciptakan gaya ini.
 
@@ -289,6 +289,7 @@ Memperlakukan tipe sebagai himpunan berguna karena kita dapat menggunakan teori 
 Berikut adalah gambar yang menunjukkan komposisi:
 
 ![komposisi kategori 1](images/cat_comp1.png)
+
 ![komposisi kategori 2](images/cat_comp2.png)
 
 Berikut adalah contoh konkret dalam kode:
