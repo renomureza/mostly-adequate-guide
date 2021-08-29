@@ -10,7 +10,7 @@ Orang tua di antara kita akan mengingat kehidupan yang memuaskan tanpa internet.
 
 Konsepnya sederhana:
 
-**Anda dapat memanggil fungsi dengan argumen yang lebih sedikit daripada yang diharapkan. Ini mengembalikan fungsi yang mengambil argumen yang tersisa.**
+Anda dapat **memanggil fungsi dengan argumen yang lebih sedikit daripada yang diharapkan**. Ini **mengembalikan fungsi yang mengambil argumen yang tersisa**.
 
 Anda dapat memilih untuk memanggil semuanya sekaligus atau hanya memberi makan di setiap argumen sedikit-sedikit.
 
@@ -29,7 +29,7 @@ Dengan memanggilnya, fungsi yang dikembalikan mengingat argumen pertama sejak sa
 
 Akan tetapi, memanggilnya dengan kedua argumen sekaligus sedikit merepotkan, jadi kita bisa menggunakan fungsi pembantu khusus yang dipanggil `curry` untuk membuat pendefinisian dan pemanggilan fungsi seperti ini lebih mudah.
 
-Mari kita siapkan beberapa fungsi kari untuk kesenangan kita. Mulai sekarang, kita akan memanggil fungsi `curry` kita yang didefinisikan di [Lampiran A: Dukungan Fungsi Esensial](appendix_a-id.md).
+Mari kita siapkan beberapa fungsi kari untuk kesenangan kita. Mulai sekarang, kita akan memanggil fungsi `curry` kita yang didefinisikan di [Lampiran A: Dukungan Fungsi Esensial](./appendix_a-id.md).
 
 ```js
 const match = curry((what, s) => s.match(what));
@@ -117,15 +117,6 @@ Mari dapatkan alat penting lain yang disebut compose.
 ## Latihan
 
 #### Catatan tentang Latihan
-
-Throughout the book, you might encounter an 'Exercises' section like this one. Exercises can be
-done directly in-browser provided you're reading from gitbook (disarankan).
-
-Note that, for all exercises of the book, you always have a handful of helper functions
-available in the global scope. Hence, anything that is defined in [Appendix A](./appendix_a.md),
-[Appendix B](./appendix_b.md) and [Appendix C](./appendix_c.md) is available for you! And, as
-if it wasn't enough, some exercises will also define functions specific to the problem
-they present; as a matter of fact, consider them available as well.
 
 Di sepanjang buku, Anda mungkin menemukan bagian 'Latihan' seperti ini. Latihan dapat dilakukan langsung di browser asalkan Anda membaca dari gitbook (disarankan).
 

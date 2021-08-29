@@ -8,9 +8,9 @@ Satu hal yang perlu kita luruskan adalah gagasan tentang fungsi murni.
 
 Ambil `slice` dan `splice`. Mereka adalah dua fungsi yang melakukan hal yang sama persis - dengan cara yang sangat berbeda, ingatlah, tetapi tetap saja hal yang sama.
 
-Kita mengatakan `slice` ini _murni_ karena ia mengembalikan output yang sama per masukan setiap kali, dijamin.
+Kita mengatakan `slice` ini _murni_ karena ia mengembalikan output yang sama per setiap masukan, dijamin.
 
-Di sisi lain `splice` akan mengunyah susunannya dan memuntahkannya kembali selamanya berubah yang merupakan efek yang dapat diamati.
+Di sisi lain `splice` akan mengunyah susunannya dan memuntahkannya kembali, selamanya berubah yang merupakan efek yang dapat diamati.
 
 ```js
 const xs = [1, 2, 3, 4, 5];
@@ -32,7 +32,7 @@ xs.splice(0, 3); // []
 
 Dalam pemrograman fungsional, kita tidak suka fungsi berat seperti `splice` yang membuat data _bermutasi_ atau berubah.
 
-Ini tidak akan pernah berhasil karena kami berusaha untuk fungsi yang andal yang mengembalikan hasil yang sama setiap saat, bukan fungsi yang meninggalkan kekacauan seperti `splice`.
+Ini tidak akan pernah berhasil karena kami berusaha untuk membuat fungsi yang andal yang mengembalikan hasil yang sama setiap saat, bukan fungsi yang meninggalkan kekacauan seperti `splice`.
 
 Mari kita lihat contoh lain.
 
@@ -50,13 +50,13 @@ const checkAge = (age) => {
 
 Di bagian yang tidak murni (_impure_), `checkAge` bergantung pada variabel `minimum` yang dapat diubah untuk menentukan hasilnya.
 
-Dengan kata lain, itu tergantung pada keadaan sistem yang mengecewakan karena meningkatkan [beban kognitif](https://en.wikipedia.org/wiki/Cognitive_load) dengan memperkenalkan lingkungan eksternal.
+Dengan kata lain, itu tergantung pada _state_ sistem yang mengecewakan karena meningkatkan [beban kognitif](https://en.wikipedia.org/wiki/Cognitive_load) dengan memperkenalkan lingkungan eksternal.
 
-Ini mungkin tidak tampak seperti banyak dalam contoh ini, tetapi ketergantungan pada keadaan ini adalah salah satu kontributor terbesar untuk kompleksitas sistem: http://curtclifton.net/papers/MoseleyMarks06a.pdf .
+Ini mungkin tidak tampak seperti banyak dalam contoh ini, tetapi ketergantungan pada _state_ ini adalah salah satu kontributor terbesar untuk kompleksitas sistem: http://curtclifton.net/papers/MoseleyMarks06a.pdf .
 
-`checkAge` mungkin memberikan hasil yang berbeda tergantung pada faktor eksternal input, yang tidak hanya mendiskualifikasinya dari kemurnian, tetapi juga menempatkan pikiran kita melalui pemeras setiap kali kita berpikir tentang perangkat lunak.
+`checkAge` dapat memberikan hasil yang berbeda tergantung pada faktor input eksternal, yang tidak hanya mendiskualifikasinya dari kemurnian, tetapi juga menempatkan pikiran kita melalui pemeras setiap kali kita berpikir tentang perangkat lunak.
 
-Bentuknya yang murni (_pure_), di sisi lain, sepenuhnya mandiri. Kami juga dapat membuat `minimum` tidak dapat diubah, yang menjaga kemurnian karena _state_ tidak akan pernah berubah.
+Bentuk yang murni (_pure_), di sisi lain, sepenuhnya mandiri. Kami juga dapat membuat `minimum` tidak dapat diubah, yang menjaga kemurnian karena _state_ tidak akan pernah berubah.
 
 Untuk melakukan ini, kita harus membuat objek untuk dibekukan.
 
@@ -76,7 +76,7 @@ Bagian _samping_ itulah yang berkonotasi negatif.
 
 Air saja bukanlah inkubator larva yang melekat, itu adalah bagian stagnan yang menghasilkan kawanan, dan saya yakinkan Anda, efek samping adalah tempat berkembang biak yang serupa dalam program Anda sendiri.
 
-> Efek samping adalah perubahan dari sistem _state_ atau interaksi diamati dengan dunia luar yang terjadi selama perhitungan hasilnya.
+> Efek samping adalah perubahan dari sistem _state_ atau interaksi yang dapat diamati dengan dunia luar yang terjadi selama perhitungan hasilnya.
 
 Efek samping mungkin termasuk, tetapi tidak terbatas pada:
 
@@ -109,7 +109,7 @@ Mari kita lihat lebih dekat mengapa kita menuntut output yang sama per input. Bu
 
 Dari mathisfun.com:
 
-> Fungsi adalah hubungan khusus antara nilai: Setiap nilai inputnya mengembalikan tepat satu nilai output.
+> Fungsi adalah hubungan khusus antara nilai: Setiap nilai input mengembalikan tepat satu nilai output.
 
 Dengan kata lain, itu hanya hubungan antara dua nilai: input dan output.
 
@@ -127,7 +127,7 @@ Atau mungkin tabel:
 
 <table> <tr> <th>Input</th> <th>Output</th> </tr> <tr> <td>1</td> <td>2</td> </tr> <tr> <td>2</td> <td>4</td> </tr> <tr> <td>3</td> <td>6</td> </tr> </table>
 
-Atau bahkan sebagai grafik dengan `x` sebagai input dan `y` sebagai output:
+Atau bahkan sebagai grafik dimana `x` sebagai input dan `y` sebagai output:
 
 <img src="images/fn_graph.png" width="300" height="300" alt="function graph" />
 
@@ -163,7 +163,7 @@ Memang, itu menghadirkan sedikit ketidaknyamanan ketika berpikir dalam hal matem
 
 Ketika kita mempelajari tentang _currying_ , kita akan melihat bagaimana kita dapat secara langsung memodelkan definisi matematis dari suatu fungsi.
 
-Inilah pengungkapan dramatisnya: Fungsi murni adalah fungsi matematika dan itulah yang dimaksud dengan pemrograman fungsional.
+Inilah pengungkapan dramatisnya: **Fungsi murni adalah fungsi matematika**, itulah yang dimaksud dengan pemrograman fungsional.
 
 Pemrograman dengan malaikat kecil ini dapat memberikan manfaat yang sangat besar. Mari kita lihat beberapa alasan mengapa kita rela berusaha keras untuk menjaga kemurnian.
 
@@ -245,15 +245,15 @@ Hal lain yang perlu diperhatikan adalah bahwa kami dipaksa untuk "menyuntikkan" 
 
 Jika kita memilih untuk menggunakan Db yang berbeda, kita hanya perlu memanggil fungsi kita dengannya.
 
-Jika kita menemukan diri kita menulis aplikasi baru di mana kita ingin menggunakan kembali fungsi yang dapat diandalkan ini, kita cukup memberikan fungsi ini apa pun Dbdan yang `Email` kita miliki saat itu.
+Jika kita menemukan diri kita menulis aplikasi baru di mana kita ingin menggunakan kembali fungsi yang dapat diandalkan ini, kita cukup memberikan fungsi ini apa pun Db dan `Email` kita miliki saat itu.
 
 Dalam pengaturan JavaScript, portabilitas dapat berarti membuat serial dan mengirim fungsi melalui soket. Itu bisa berarti menjalankan semua kode aplikasi kami di _web worker_.
 
 Portabilitas adalah sifat yang kuat.
 
-Berlawanan dengan metode dan prosedur "khas" dalam pemrograman imperatif yang berakar jauh di lingkungan mereka melalui status, dependensi, dan efek yang tersedia, fungsi murni dapat dijalankan di mana saja.
+Berlawanan dengan method dan prosedur "khas" dalam pemrograman imperatif yang berakar jauh di lingkungan mereka melalui status, dependensi, dan efek yang tersedia, fungsi murni dapat dijalankan di mana saja.
 
-Kapan terakhir kali Anda menyalin metode ke aplikasi baru? Salah satu kutipan favorit saya berasal dari pencipta Erlang, Joe Armstrong:
+Kapan terakhir kali Anda menyalin method ke aplikasi baru? Salah satu kutipan favorit saya berasal dari pencipta Erlang, Joe Armstrong:
 
 > "Masalah dengan bahasa berorientasi objek adalah mereka memiliki semua lingkungan implisit yang mereka bawa. Anda menginginkan pisang tetapi yang Anda dapatkan adalah gorila yang memegang pisang ... dan seluruh hutan".
 
@@ -261,7 +261,7 @@ Kapan terakhir kali Anda menyalin metode ke aplikasi baru? Salah satu kutipan fa
 
 Selanjutnya, kami menyadari bahwa fungsi murni membuat pengujian menjadi lebih mudah.
 
-Kami tidak perlu mengejek gateway pembayaran atau pengaturan "nyata" dan menegaskan keadaan dunia setelah setiap pengujian. Kami hanya memberikan input fungsi dan menegaskan output.
+Kami tidak perlu meniru gateway pembayaran atau pengaturan "nyata" dan menegaskan keadaan dunia setelah setiap pengujian. Kami hanya memberikan input fungsi dan menegaskan output.
 
 Faktanya, kami menemukan komunitas fungsional yang mempelopori alat uji baru yang dapat meledakkan fungsi kami dengan input yang dihasilkan dan menegaskan bahwa properti menahan output.
 
@@ -310,7 +310,7 @@ Karena data kami tidak dapat diubah, kami cukup mengganti team dengan nilai sebe
 const punch = (a, t) => ("red" === "green" ? t : decrementHP(t));
 ```
 
-Kami melihat bahwa itu salah dalam kasus ini sehingga kami dapat menghapus seluruh cabang if
+Kami melihat bahwa itu `false` dalam kasus ini sehingga kami dapat menghapus seluruh cabang if
 
 ```js
 const punch = (a, t) => decrementHP(t);
@@ -330,7 +330,7 @@ Kami menggunakan penalaran persamaan untuk memanfaatkan sifat-sifat penjumlahan 
 
 ### Kode Paralel
 
-Akhirnya, dan inilah _coup de grâce_, kita dapat menjalankan fungsi murni apa pun secara paralel karena tidak memerlukan akses ke memori bersama dan, menurut definisi, tidak dapat memiliki kondisi balapan karena beberapa efek samping.
+Akhirnya, dan inilah _coup de grâce_, kita dapat menjalankan fungsi murni apa pun secara paralel karena tidak memerlukan akses ke memori bersama dan, menurut definisi, tidak akan memiliki kondisi balapan karena beberapa efek samping.
 
 Ini sangat mungkin terjadi di lingkungan js sisi server dengan _thread_ serta di browser dengan _web worker_ meskipun budaya saat ini tampaknya menghindarinya karena kerumitan ketika berhadapan dengan fungsi yang tidak murni.
 
@@ -344,6 +344,6 @@ Kami akan memerlukan beberapa alat tambahan untuk membantu kami melakukannya, te
 
 Menulis program dengan fungsi murni sedikit melelahkan tanpa beberapa alat tambahan di ikat pinggang kami.
 
-Kami harus menyulap data dengan melewatkan argumen di semua tempat, kami dilarang menggunakan _state_, apalagi efek. Bagaimana cara menulis program masokis ini? Mari kita mendapatkan alat baru yang disebut _curry_ (kari).
+Kami harus menyulap data dengan melewatkan argumen di semua tempat, kami dilarang menggunakan _state_, apalagi efek. Bagaimana cara menulis program masokis ini? Mari kita dapatkan alat baru yang disebut _curry_ (kari).
 
 [Bab 04: Currying](ch04-id.md)

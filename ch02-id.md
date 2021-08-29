@@ -115,7 +115,7 @@ Selain itu, jika fungsi pembungkus yang tidak perlu seperti itu harus diubah, ki
 httpGet("/post/2", (json) => renderPost(json));
 ```
 
-Jika `httpGet` ingin mengubah untuk mengirim kemungkinan `err`, kita harus kembali dan mengganti "lem".
+Jika `httpGet` diuba agar dapat mengirim kemungkinan `err`, kita harus kembali dan mengganti "lem".
 
 ```js
 // go back to every httpGet call in the application and explicitly pass err along.

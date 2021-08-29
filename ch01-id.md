@@ -47,9 +47,9 @@ Mari kita mulai dengan sentuhan kegilaan.
 
 Berikut adalah aplikasi burung camar.
 
-Ketika kawanan bergabung, mereka menjadi kawanan yang lebih besar, dan ketika mereka berkembang biak, mereka bertambah dengan jumlah burung camar dengan siapa mereka berkembang biak.
+Ketika kawanan lain bergabung, mereka menjadi kawanan yang lebih besar, dan ketika mereka berkembang biak, mereka bertambah dengan jumlah burung camar dengan siapa mereka berkembang biak.
 
-Sekarang, ini tidak dimaksudkan untuk menjadi kode Berorientasi Objek yang baik, ingatlah, ini di sini untuk menyoroti bahaya pendekatan berbasis penugasan modern kami.
+Sekarang, ini tidak dimaksudkan untuk menjadi kode Berorientasi Objek yang baik, ingatlah, kita di sini untuk menyoroti bahaya pendekatan berbasis penugasan modern.
 
 Lihat:
 
