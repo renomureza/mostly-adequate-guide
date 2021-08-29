@@ -112,7 +112,7 @@ Kami dapat membuat fungsi baru yang berguna dengan cepat hanya dengan mengirimka
 
 Mari dapatkan alat penting lain yang disebut compose.
 
-[Bab 05: Coding dengan Composing](ch05-id.md)
+[Bab 05: Coding dengan Composing](./ch05-id.md)
 
 ## Latihan
 

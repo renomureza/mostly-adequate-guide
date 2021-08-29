@@ -29,13 +29,15 @@ for (let i = 0; i < cars.length; i += 1) {
 const makes = cars.map((car) => car.make);
 ```
 
-Loop imperatif pertama-tama harus membuat instance array. Penerjemah harus mengevaluasi pernyataan ini sebelum melanjutkan.
+Loop imperatif pertama-tama harus membuat instance array. Interpreter harus mengevaluasi _statement_ ini sebelum melanjutkan.
 
 Kemudian secara langsung beralih melalui daftar mobil, secara manual meningkatkan penghitung dan menunjukkan potongan-potongannya kepada kami dalam tampilan vulgar dari iterasi eksplisit.
 
 Versi `map` adalah salah satu ekspresi. Itu tidak memerlukan urutan evaluasi.
 
-Ada banyak kebebasan di sini untuk bagaimana fungsi `map` berulang dan bagaimana array yang dikembalikan dapat dirakit. Ini menentukan "**apa**", bukan "**bagaimana**". Dengan demikian, ia memakai selempang deklaratif yang mengkilap.
+Ada banyak kebebasan di sini untuk bagaimana fungsi `map` berulang dan bagaimana array yang dikembalikan dapat dirakit.
+
+Ini menentukan "**apa**", bukan "**bagaimana**". Dengan demikian, ia memakai selempang deklaratif yang mengkilap.
 
 Selain lebih jelas dan ringkas, fungsi `map` dapat dioptimalkan sesuka hati dan kode aplikasi kita yang berharga tidak perlu diubah.
 
@@ -60,7 +62,7 @@ Ekspresi `compose` hanya menyatakan fakta: Otentikasi adalah komposisi `toUser` 
 
 Sekali lagi, ini meninggalkan ruang gerak untuk perubahan kode dukungan dan menghasilkan kode aplikasi kita menjadi spesifikasi tingkat tinggi.
 
-Dalam contoh di atas, urutan evaluasi ditentukan (`toUser` harus dipanggil sebelumnya `logIn`).
+Dalam contoh di atas, urutan evaluasi ditentukan (`toUser` harus dipanggil sebelum `logIn`).
 
 Tetapi ada banyak skenario di mana urutannya tidak penting, dan ini mudah ditentukan dengan pengkodean deklaratif (lebih lanjut tentang ini nanti).
 
@@ -70,7 +72,7 @@ Ini ditambah dengan fungsi murni adalah mengapa FP (Functional Programming) adal
 
 ## Flickr dari Pemrograman Fungsional
 
-Sekarang kita akan membangun sebuah contoh aplikasi dengan cara yang deklaratif dan dapat dikomposisi.
+Sekarang kita akan membangun sebuah contoh aplikasi Flickr dengan cara yang deklaratif dan dapat dikomposisi.
 
 Kami masih akan menipu dan menggunakan efek samping untuk saat ini, tetapi kami akan membuatnya minimal dan terpisah dari basis kode murni kami.
 
@@ -115,7 +117,7 @@ Saya telah menggunakan requirejs, yang mungkin tampak berlebihan, tetapi kami ak
 Sekarang itu keluar dari jalan, ke spesifikasi. Aplikasi kami akan melakukan 4 hal.
 
 1. Buat url untuk istilah pencarian khusus kami.
-2. Lakukan panggilan api flickr.
+2. Lakukan panggilan API Flickr.
 3. Ubah json yang dihasilkan menjadi gambar html.
 4. Tempatkan di layar.
 
@@ -162,15 +164,19 @@ Ini memanggil fungsi `url` kita, lalu meneruskan string ke fungsi `getJSON`, yan
 
 ![respon console](images/console_ss.png)
 
-Kami ingin membuat gambar dari json ini. Sepertinya `mediaUrls` tertimbun di `items` kemudian properti masing `media` `m`.
+Kami ingin membuat gambar dari json ini. Sepertinya `mediaUrls` tertimbun di `items` termasuk properti masing `media`, `m`.
 
-Bagaimanapun, untuk mendapatkan properti bersarang ini kita dapat menggunakan fungsi pengambil universal yang bagus dari ramda yang disebut prop. Ini adalah versi buatan sendiri sehingga Anda dapat melihat apa yang terjadi:
+Bagaimanapun, untuk mendapatkan properti bersarang ini kita dapat menggunakan fungsi pengambil universal yang bagus dari ramda yang disebut prop.
+
+Ini adalah versi buatan sendiri agar Anda dapat melihat apa yang terjadi:
 
 ```js
 const prop = curry((property, object) => object[property]);
 ```
 
-Sebenarnya ini cukup membosankan. Kami hanya menggunakan sintaks `[]` untuk mengakses properti pada objek apa pun. Mari kita gunakan ini untuk mendapatkan `mediaUrls`.
+Sebenarnya ini cukup membosankan. Kami hanya menggunakan sintaks `[]` untuk mengakses properti pada objek apa pun.
+
+Mari kita gunakan ini untuk mendapatkan `mediaUrls`.
 
 ```js
 const mediaUrl = compose(prop("m"), prop("media"));
@@ -188,7 +194,7 @@ const app = compose(Impure.getJSON(render), url);
 
 Yang telah kita lakukan adalah membuat komposisi baru yang akan memanggil `mediaUrls` dan mengatur `<main>` html dengan mereka.
 
-Kami telah mengganti panggilan `trace` dengan `render` sekarang karena kami memiliki sesuatu yang perlu dirender selain json mentah. Ini secara kasar akan menampilkan `mediaUrls` di dalam body.
+Kami telah mengganti panggilan `trace` dengan `render` sekarang karena kami memiliki sesuatu yang perlu dirender selain JSON mentah. Ini secara kasar akan menampilkan `mediaUrls` di dalam body.
 
 Langkah terakhir kami adalah mengubahnya `mediaUrls` menjadi bonafid images.
 
@@ -216,7 +222,7 @@ Sekarang lihat itu. Spesifikasi deklaratif yang indah tentang apa adanya, bukan 
 
 Kami sekarang melihat setiap baris sebagai persamaan dengan sifat-sifat yang berlaku. Kita dapat menggunakan properti ini untuk alasan tentang aplikasi dan refactor kita.
 
-## Sebuah Refactor Berprinsip
+## Refactor Berprinsip
 
 Ada pengoptimalan yang tersedia - kami memetakan setiap item untuk mengubahnya menjadi url media, lalu kami memetakan lagi di atas mediaUrls tersebut untuk mengubahnya menjadi tag img.
 
@@ -269,10 +275,10 @@ Kami telah melihat bagaimana menggunakan keterampilan baru kami dengan aplikasi 
 
 Kami telah menggunakan kerangka matematika kami untuk alasan dan refactor kode kami.
 
-Tapi bagaimana dengan penanganan kesalahan dan percabangan kode? Bagaimana kita bisa membuat seluruh aplikasi murni alih-alih hanya memberi nama pada fungsi destruktif?
+Tapi bagaimana dengan _error handling_ dan percabangan? Bagaimana kita bisa membuat seluruh aplikasi murni alih-alih hanya memberi nama pada fungsi destruktif?
 
 Bagaimana kita bisa membuat aplikasi kita lebih aman dan lebih ekspresif?
 
 Ini adalah pertanyaan yang akan kita tangani di bab 2.
 
-[Bab 07: Hindley-Milner dan Saya](ch07-id.md)
+[Bab 07: Hindley-Milner dan Saya](./ch07-id.md)

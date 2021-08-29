@@ -28,9 +28,9 @@ class Container {
 }
 ```
 
-Ini wadah pertama kami.
+Ini wadah pertama kami. Kami telah menamainya dengan cermat `Container`.
 
-Kami telah menamakannya dengan cermat `Container`. Kami akan menggunakan `Container.of` sebagai konstruktor yang menyelamatkan kami dari keharusan menulis kata kunci `new` yang mengerikan itu di semua tempat.
+Kami akan menggunakan `Container.of` sebagai konstruktor yang menyelamatkan kami dari keharusan menulis kata kunci `new` yang mengerikan itu di semua tempat.
 
 Ada lebih banyak fungsi `of` daripada yang terlihat, tetapi untuk saat ini, anggap itu sebagai cara yang tepat untuk menempatkan nilai ke dalam wadah kita.
 
@@ -74,7 +74,7 @@ Container.prototype.map = function (f) {
 };
 ```
 
-Mengapa, itu seperti array `map`, tapi kita memiliki `Container a` alih - alih [a]. Pada dasarnya bekerja dengan cara yang sama:
+Mengapa, itu seperti array `map`, tapi kita memiliki `Container a` alih - alih `[a]`. Pada dasarnya bekerja dengan cara yang sama:
 
 ```js
 Container.of(2).map((two) => two + 2);
@@ -97,11 +97,11 @@ Tunggu sebentar, jika kita terus memanggil `map`, sepertinya itu semacam komposi
 
 Ya, Functor hanyalah antarmuka dengan kontrak. Kita bisa dengan mudah menamakannya _Mappable_, tapi sekarang, di mana kesenangannya?
 
-Fungsi berasal dari teori kategori dan kita akan melihat matematika secara detail menjelang akhir bab ini, tetapi untuk sekarang, mari kita bekerja pada intuisi dan penggunaan praktis untuk antarmuka yang diberi nama aneh ini.
+Functor berasal dari teori kategori dan kita akan melihat matematika secara detail menjelang akhir bab ini, tetapi untuk sekarang, mari kita bekerja pada intuisi dan penggunaan praktis untuk antarmuka yang diberi nama aneh ini.
 
-Alasan apa yang mungkin kita miliki untuk membotolkan nilai dan menggunakan `map` untuk mendapatkannya? Jawabannya muncul dengan sendirinya jika kita memilih pertanyaan yang lebih baik: Apa yang kita dapatkan dari meminta wadah kita untuk menerapkan fungsi untuk kita? Nah, abstraksi aplikasi fungsi.
+Apa alasannya memasukkan nilai ke dalam botol dan menggunakan `map` untuk mendapatkannya? Jawabannya muncul dengan sendirinya jika kita memilih pertanyaan yang lebih baik: Apa untungnya meminta container menerapkan functor untuk kita? Nah, abstraksi aplikasi fungsi.
 
-Saat kami menjalankan fungsi `map`, kami meminta jenis wadah untuk menjalankannya untuk kami. Ini adalah konsep yang sangat kuat, memang.
+Saat kami menjalankan fungsi `map`, kami meminta tipe container untuk menjalankannya untuk kami. Ini adalah konsep yang sangat kuat, memang.
 
 ## Mungkin Schrödinger
 
@@ -109,11 +109,11 @@ Saat kami menjalankan fungsi `map`, kami meminta jenis wadah untuk menjalankanny
 
 `Container` cukup membosankan.
 
-Faktanya, fungsi ini biasanya dipanggil `Identity` dan memiliki dampak yang hampir sama dengan fungsi `id` kita (sekali lagi ada hubungan matematika yang akan kita lihat saat waktunya tepat).
+Faktanya, fungsi ini biasanya dipanggil `Identity` dan memiliki dampak yang hampir sama dengan fungsi `id` (sekali lagi ada hubungannnya matematika yang akan kita lihat saat waktunya tepat).
 
 Namun, ada functor lain, yaitu tipe wadah seperti yang memiliki fungsi `map`, yang dapat memberikan perilaku yang berguna saat pemetaan. Mari kita definisikan sekarang.
 
-> Implementasi lengkap ada di [Lampiran B](./appendix_b-id.md#Maybe)
+> Implementasi lengkap ada di [Lampiran B](./appendix_b-id.md)
 
 ```js
 class Maybe {

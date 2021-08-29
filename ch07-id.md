@@ -4,7 +4,7 @@
 
 Jika Anda baru mengenal dunia fungsional, tidak akan lama sebelum Anda menemukan diri Anda dalam tanda tangan tipe.
 
-Tipe (jenis) adalah bahasa meta yang memungkinkan orang dari semua latar belakang yang berbeda untuk berkomunikasi secara ringkas dan efektif.
+Tipe (jenis) adalah meta bahasa yang memungkinkan semua orang dari latar belakang yang berbeda untuk berkomunikasi secara ringkas dan efektif.
 
 Sebagian besar, mereka ditulis dengan sistem yang disebut "Hindley-Milner", yang akan kita bahas bersama dalam bab ini.
 
@@ -39,15 +39,9 @@ const capitalize = (s) => toUpperCase(head(s)) + toLowerCase(tail(s));
 capitalize("smurf"); // 'Smurf'
 ```
 
-Here, `capitalize` takes a `String` and returns a `String`. Never mind the implementation, it's the type signature we're interested in.
-
-In HM, functions are written as `a -> b` where `a` and `b` are variables for any type. So the signatures for `capitalize` can be read as "a function from `String` to `String`". In other words, it takes a `String` as its input and returns a `String` as its output.
-
-Let's look at some more function signatures:
-
 Di sini, `capitalize` mengambil `String` dan mengembalikan `String`. Jangankan implementasinya, ini adalah jenis tanda tangan yang kami minati.
 
-Dalam HM, fungsi ditulis sebagai `a -> b` dimana `a` dan `b` merupakan variabel untuk tipe apa pun.
+Dalam HM (Hindley-Milner), fungsi ditulis sebagai `a -> b` dimana `a` dan `b` merupakan variabel untuk tipe apa pun.
 
 Jadi tanda tangan untuk `capitalize` dapat dibaca sebagai "fungsi dari `String` ke `String`".
 
@@ -236,7 +230,7 @@ Dalam JavaScript, ada beberapa alat yang tersedia untuk mendeklarasikan aturan p
 
 Seseorang mungkin juga melakukan ini melalui fungsi `compose` itu sendiri. Buahnya menggantung rendah dan kemungkinannya tidak terbatas.
 
-## Kendala
+## Constraints
 
 Satu hal terakhir yang perlu diperhatikan adalah bahwa kita dapat membatasi tipe ke antarmuka.
 
@@ -244,23 +238,23 @@ Satu hal terakhir yang perlu diperhatikan adalah bahwa kita dapat membatasi tipe
 // sort :: Ord a => [a] -> [a]
 ```
 
-Apa yang kita lihat di sisi kiri panah gemuk kita di sini adalah pernyataan fakta: `a` pasti `Ord`.
+Apa yang kita lihat di sisi kiri panah gemuk (`=>`) kita di sini adalah pernyataan fakta: `a` pasti `Ord`.
 
 Atau dengan kata lain, `a` harus mengimplementasikan antarmuka `Ord`.
 
-Apa `Ord` dan dari mana asalnya? Dalam bahasa yang diketik (_typed language_), itu akan menjadi antarmuka yang ditentukan yang mengatakan bahwa kita dapat memesan nilai.
+Apa `Ord` dan dari mana asalnya? Dalam bahasa yang diketik (_typed language_), itu akan menjadi antarmuka yang ditentukan yang mengatakan bahwa kita dapat mengurutkan (order) nilai.
 
-Ini tidak hanya memberi tahu kita lebih banyak tentang `a` dan apa fungsi `sort`, tetapi juga membatasi domain. Kami menyebutnya sebagai deklarasi antarmuka batasan tipe.
+Ini tidak hanya memberi tahu kita lebih banyak tentang `a` dan apa fungsi `sort`, tetapi juga membatasi domain. Kami menyebutnya sebagai deklarasi antarmuka _type constraints_.
 
 ```js
 // assertEqual :: (Eq a, Show a) => a -> a -> Assertion
 ```
 
-Di sini, kami memiliki dua kendala: `Eq` dan `Show`.
+Di sini, kami memiliki dua constraints: `Eq` dan `Show`.
 
 Itu akan memastikan bahwa kami dapat memeriksa kesetaraan `a` dan mencetak perbedaannya jika tidak sama.
 
-Kita akan melihat lebih banyak contoh kendala dan idenya akan lebih terbentuk di bab-bab selanjutnya.
+Kita akan melihat lebih banyak contoh constraints dan idenya akan lebih terbentuk di bab-bab selanjutnya.
 
 ## Singkatnya
 
@@ -268,4 +262,9 @@ Tanda tangan tipe Hindley-Milner ada di mana-mana di dunia fungsional.
 
 Meskipun mudah dibaca dan ditulis, dibutuhkan waktu untuk menguasai teknik memahami program hanya melalui tanda tangan. Kami akan menambahkan tanda tangan tipe ke setiap baris kode mulai sekarang.
 
-[Bab 08: Tupperware](ch08-id.md)
+[Bab 08: Tupperware](./ch08-id.md)
+
+Referensi lain tentang _type signatures_ Hindley-Milner:
+
+- [Type Signatures - Rambda Wiki Github](https://github.com/ramda/ramda/wiki/Type-Signatures)
+- [Hindley–Milner type system - Wikipedia](https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system)

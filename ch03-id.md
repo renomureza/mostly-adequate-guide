@@ -346,4 +346,4 @@ Menulis program dengan fungsi murni sedikit melelahkan tanpa beberapa alat tamba
 
 Kami harus menyulap data dengan melewatkan argumen di semua tempat, kami dilarang menggunakan _state_, apalagi efek. Bagaimana cara menulis program masokis ini? Mari kita dapatkan alat baru yang disebut _curry_ (kari).
 
-[Bab 04: Currying](ch04-id.md)
+[Bab 04: Currying](./ch04-id.md)

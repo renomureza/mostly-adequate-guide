@@ -194,4 +194,4 @@ Hasil dari bekerja dalam kerangka matematika yang berprinsip akan benar-benar me
 
 Kami telah melihat kerlip bintang utara fungsional kami, tetapi ada beberapa konsep konkret yang harus dipahami sebelum kami benar-benar dapat memulai perjalanan kami.
 
-[Bab 02: Fungsi Kelas Satu (First Class Function)](ch02-id.md)
+[Bab 02: Fungsi Kelas Satu (First Class Function)](./ch02-id.md)
