@@ -172,4 +172,4 @@ Jika Anda tidak bisa mendapatkan uang Anda kembali, mungkin Anda bisa menukarnya
 
 Dan dengan itu, kami siap untuk melanjutkan.
 
-[Bab 03: Kebahagiaan Murni dengan Fungsi Murni](ch03-id.md)
+[Bab 03: Kebahagiaan Murni dengan Fungsi Murni](./ch03-id.md)

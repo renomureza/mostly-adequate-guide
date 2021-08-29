@@ -348,7 +348,7 @@ Ini karena aplikasi kami tetap sederhana dan masuk akal. Teori kategori akan mem
 
 Kita sekarang berada pada titik di mana akan bermanfaat bagi kita untuk melihat beberapa dari ini dalam praktik. Mari kita membuat contoh aplikasi.
 
-[Bab 06: Contoh Aplikasi](ch06-id.md)
+[Bab 06: Contoh Aplikasi](./ch06-id.md)
 
 ## Latihan
 
