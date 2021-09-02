@@ -1,6 +1,6 @@
 # Bab 12: Melintasi Batu
 
-Sejauh ini, di _cirque du conteneur_, Anda telah melihat kami menjinakkan functor [functor](./ch08-id.md#functor-pertamaku) yang ganas, membengkokkannya sesuai keinginan kami untuk melakukan operasi apa pun yang sesuai dengan keinginan.
+Sejauh ini, di _cirque du conteneur_, Anda telah melihat kami menjinakkan [functor](./ch08-id.md#functor-pertamaku) yang ganas, membengkokkannya sesuai keinginan kami untuk melakukan operasi apa pun yang sesuai dengan keinginan.
 
 Anda telah terpesona oleh juggling banyak efek berbahaya sekaligus menggunakan fungsi [aplikasi](./ch10-id.md) untuk mengumpulkan hasilnya.
 
@@ -136,7 +136,7 @@ Jika saya memiliki `[Maybe a]`, itu adalah kumpulan nilai yang mungkin, sedangka
 
 Yang pertama menunjukkan bahwa kita akan memaafkan dan mempertahankan "yang baik", sedangkan yang kedua berarti itu adalah tipe situasi "semua atau tidak sama sekali".
 
-Demikian juga, `Either Error (Task Error a)` bisa mewakili validasi sisi klien dan Task Error (Either Error a)bisa menjadi sisi server. Tipe dapat ditukar untuk memberi kita efek yang berbeda.
+Demikian juga, `Either Error (Task Error a)` bisa mewakili validasi sisi klien dan `Task Error (Either Error a)` bisa menjadi sisi server. Tipe dapat ditukar untuk memberi kita efek yang berbeda.
 
 ```js
 // fromPredicate :: (a -> Bool) -> a -> Either e a
@@ -179,13 +179,13 @@ Fungsi reduce adalah `(f, a) => fn(a).map(b => bs => bs.concat(b)).ap(f)`, yang 
 
 2. `of(new List([]))`
 
-Nilai benih adalah `of(new List([]))`, yang dalam kasus kami adalah `Right([]) :: Either e [a]`. Perhatikan bahwa `Either e [a]` itu juga akan menjadi tipe hasil akhir kita!
+   Nilai benih adalah `of(new List([]))`, yang dalam kasus kami adalah `Right([]) :: Either e [a]`. Perhatikan bahwa `Either e [a]` itu juga akan menjadi tipe hasil akhir kita!
 
 3. `fn :: Applicative f => a -> f a`
 
    Jika kita menerapkannya pada contoh kita di atas, `fn` sebenarnya `fromPredicate(f) :: a -> Either e a`.
 
-   > fn(a) :: Entah ea
+   > fn(a) :: Either e a
 
 4. `.map(b => bs => bs.concat(b))`
 
@@ -193,7 +193,7 @@ Nilai benih adalah `of(new List([]))`, yang dalam kasus kami adalah `Right([]) :
 
    Dalam hal ini fungsi memiliki satu parameter `(b)`, dan mengembalikan fungsi lain (`bs => bs.concat(b)`, di mana `b` dalam ruang lingkup karena closures). Ketika `Left`, nilai kiri dikembalikan.
 
-   > fn(a).map(b => bs => bs.concat(b)) :: Entah e ([a] -> [a])
+   > fn(a).map(b => bs => bs.concat(b)) :: Either e ([a] -> [a])
 
 5. `.ap(f)`
 
@@ -205,7 +205,7 @@ Nilai benih adalah `of(new List([]))`, yang dalam kasus kami adalah `Right([]) :
 
    Ketika `Left`, nilai kiri (dari langkah sebelumnya atau iterasi sebelumnya masing-masing) dikembalikan.
 
-   > fn(a).map(b => bs => bs.concat(b)).ap(f) :: Entah e [a]
+   > fn(a).map(b => bs => bs.concat(b)).ap(f) :: Either e [a]
 
 Transformasi yang tampaknya ajaib ini dicapai hanya dengan 6 baris kode yang sangat sedikit di `List.traverse`, dan diselesaikan dengan `of`, `map` dan `ap`, jadi akan berfungsi untuk semua Fungsi Aplikatif.
 

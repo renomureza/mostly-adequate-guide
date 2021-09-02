@@ -4,7 +4,7 @@
 
 Nama **functor aplikatif** sangat deskriptif mengingat asal-usul fungsionalnya. Pemrogram fungsional terkenal karena memunculkan nama seperti `mappendor` atau `liftA4` yang tampak sangat alami ketika dilihat di lab matematika, tetapi memiliki kejelasan Darth Vader yang ragu-ragu ketika didorong dalam konteks lain.
 
-Bagaimanapun, nama tersebut harus menjelaskan apa yang diberikan antarmuka ini kepada kita: _kemampuan untuk menerapkan functor satu sama lain_.
+Bagaimanapun, nama tersebut harus menjelaskan apa yang diberikan antarmuka ini kepada kita: **kemampuan untuk menerapkan functor satu sama lain**.
 
 Sekarang, mengapa orang normal dan rasional seperti Anda menginginkan hal seperti itu? Apa artinya menerapkan satu functor ke functor lainnya?
 
@@ -44,7 +44,7 @@ Bahkan, akan sangat menyenangkan jika kita dapat secara ringkas menerapkan konte
 
 <img src="images/ship_in_a_bottle.jpg" alt="https://www.deviantart.com/hollycarden" />
 
-`ap` adalah fungsi yang dapat menerapkan konten fungsi dari satu fungsi ke konten nilai yang lain. Katakan itu lima kali dengan cepat.
+`ap` adalah fungsi yang dapat menerapkan konten fungsi dari satu functor ke konten nilai yang lain. Katakan itu lima kali dengan cepat.
 
 ```js
 Container.of(add(2)).ap(Container.of(3));
@@ -68,7 +68,7 @@ Container.prototype.ap = function (otherContainer) {
 };
 ```
 
-Ingat, `this.$value` akan menjadi fungsi dan kami akan menerima fungsi lain sehingga kami hanya membutuhkan `map`. Dan dengan itu kami memiliki definisi antarmuka kami:
+Ingat, `this.$value` akan menjadi fungsi dan kami akan menerima functor lain sehingga kami hanya membutuhkan `map`. Dan dengan itu kami memiliki definisi antarmuka kami:
 
 > Functor aplikatif adalah pointed functor dengan method `ap`
 
@@ -123,7 +123,7 @@ Kedua panggilan `Http` akan terjadi secara instan dan `renderPage` akan dipanggi
 
 Bandingkan ini dengan versi monadik di mana seseorang harus menyelesaikannya `Task` sebelum tembakan berikutnya. Karena kita tidak memerlukan tujuan untuk mengambil peristiwa, kita bebas dari evaluasi urutan.
 
-Sekali lagi, karena kami menggunakan aplikasi parsial untuk mencapai hasil ini, kami harus memastikan bahwa adalah `renderPage` kari atau tidak akan menunggu kedua `Tasks` smapai selesai.
+Sekali lagi, karena kami menggunakan aplikasi parsial untuk mencapai hasil ini, kami harus memastikan bahwa `renderPage` adalah kari, jika tidak, tidak akan menunggu kedua `Tasks` sampai selesai.
 
 Kebetulan, jika Anda pernah melakukan hal seperti itu secara manual, Anda akan menghargai kesederhanaan yang menakjubkan dari antarmuka ini. Ini adalah jenis kode indah yang membawa kita selangkah lebih dekat ke singularitas.
 
