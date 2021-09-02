@@ -12,7 +12,7 @@
 - [Bab 10: Aplikatif Functors](ch10-id.md)
 - [Bab 11: Transformasi Lagi, Secara Alami](ch11-id.md)
 - [Bab 12: Melintasi Batu](ch12-id.md)
-- [Bab 12: Monoid Menyatukan Semuanya](ch13-id.md)
+- [Bab 13: Monoid Menyatukan Semuanya](ch13-id.md)
 - [Lampiran A: Dukungan Fungsi Esensial](appendix_a-id.md)
 - [Lampiran B: Dukungan Struktur Aljabar](appendix_b-id.md)
 - [Lampiran C: Utilitas Pointfree](appendix_c-id.md)

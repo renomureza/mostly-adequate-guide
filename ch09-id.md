@@ -428,7 +428,7 @@ Hukum kedua serupa:
 (compose(join, of) === compose(join, map(of))) === id;
 ```
 
-It states that, for any monad `M`, `of` and `join` amounts to `id`. We can also `map(of)` and attack it from the inside out. We call this "triangle identity" because it makes such a shape when visualized:
+Ini menyatakan bahwa, untuk setiap monad `M`, `of` dan `join` berjumlah `id`. Kita juga bisa `map(of)` dan menyerangnya dari dalam ke luar. Kami menyebutnya "triangle identity" karena membuat bentuk seperti itu ketika divisualisasikan.
 
 <img src="images/triangle_identity.png" alt="monad identity law" />
 
@@ -444,7 +444,7 @@ Tunggu, saya sedang berpikir... Ya tentu saja! Mereka adalah hukum untuk suatu k
 
 Tapi itu berarti kita membutuhkan fungsi komposisi untuk melengkapi definisi.
 
-Melihat:
+Lihat:
 
 ```js
 const mcompose = (f, g) => compose(chain(f), g);
@@ -461,7 +461,7 @@ mcompose(mcompose(f, g), h) === mcompose(f, mcompose(g, h));
 
 Bagaimanapun, mereka adalah hukum kategori.
 
-Monad membentuk kategori yang disebut "kategori Kleisli" di mana semua objek adalah monad dan morfisme adalah fungsi yang dirantai.
+Monad membentuk kategori yang disebut "kategori Kleisli" di mana semua objek adalah monad dan morfisme adalah fungsi yang di-_chain_.
 
 Saya tidak bermaksud mengejek Anda dengan teori kategori bit dan bobs tanpa banyak penjelasan tentang bagaimana jigsaw cocok bersama.
 
@@ -471,7 +471,7 @@ Tujuannya adalah untuk menggores permukaan cukup untuk menunjukkan relevansi dan
 
 Monad memungkinkan kita menelusuri ke bawah ke dalam perhitungan bersarang. Kita dapat menetapkan variabel, menjalankan efek sekuensial, melakukan tugas asinkron, semua tanpa meletakkan satu bata di piramida malapetaka.
 
-Mereka datang untuk menyelamatkan ketika suatu nilai menemukan dirinya dipenjara di beberapa lapisan dengan jenis yang sama. Dengan bantuan sidekick tepercaya "runcing", monads dapat memberi kami nilai tanpa kotak dan tahu kami akan dapat menempatkannya kembali ketika kami selesai.
+Mereka datang untuk menyelamatkan ketika suatu nilai menemukan dirinya dipenjara di beberapa lapisan dengan jenis yang sama. Dengan bantuan sidekick tepercaya "pointed", monads dapat memberi kami nilai tanpa kotak dan tahu kami akan dapat menempatkannya kembali ketika kami selesai.
 
 Ya, monad sangat kuat, namun kami masih membutuhkan beberapa fungsi container tambahan.
 

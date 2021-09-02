@@ -28,7 +28,7 @@ Sampai sekarang, kami telah berhasil menghindari skenario umum ini dengan contoh
 
 Jika kita tidak mengatur tipe kita dengan cermat saat kita melanjutkan, kode kita akan terbaca lebih berbulu daripada _beatnik_ di kafe kucing.
 
-## A Situational Comedy
+## Komedi Situasional
 
 ```js
 // getValue :: Selector -> Task Error (Maybe String)
@@ -65,7 +65,7 @@ Kita dapat menyusun jenis-jenisnya menjadi satu wadah yang mengerikan, menyortir
 
 Tranformasi alami adalah "morphism antara functors", yaitu, fungsi yang beroperasi pada wadah sendiri.
 
-Ketik, itu adalah fungsi `(Functor f, Functor g) => f a -> g a`. Yang membuatnya istimewa adalah kami tidak bisa, dengan alasan apa pun, mengintip isi functor kami.
+Ketik, itu adalah fungsi `(Functor f, Functor g) => f a -> g a`. Yang membuatnya istimewa adalah kami tidak bisa mengintip isi functor kami, dengan alasan apa pun.
 
 Anggap saja sebagai pertukaran informasi yang sangat rahasia - kedua pihak tidak menyadari apa yang ada di dalam amplop manila yang disegel yang dicap "sangat rahasia".
 
@@ -167,7 +167,7 @@ Q.E.D. `Promise` dan `Task` yang isomorfik.
 
 Kami juga dapat menulis `listToArray` untuk melengkapi `arrayToList` dan menunjukkan bahwa mereka juga.
 
-Sebagai contoh tandingan, arrayToMa`ybe bukan isomorfisme karena kehilangan informasi:
+Sebagai contoh tandingan, `arrayToMaybe` bukan isomorfisme karena kehilangan informasi:
 
 ```js
 // maybeToArray :: Maybe a -> [a]
